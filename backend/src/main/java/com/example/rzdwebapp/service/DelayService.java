@@ -3,8 +3,10 @@ package com.example.rzdwebapp.service;
 import com.example.rzdwebapp.data.entity.CanceledRun;
 import com.example.rzdwebapp.data.entity.Delay;
 import com.example.rzdwebapp.data.entity.DelayId;
+import com.example.rzdwebapp.data.entity.TrainSchedule;
 import com.example.rzdwebapp.repository.CanceledRunRepo;
 import com.example.rzdwebapp.repository.DelayRepo;
+import com.example.rzdwebapp.repository.RouteStationRepo;
 import com.example.rzdwebapp.repository.TrainScheduleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,9 +19,14 @@ public class DelayService implements CrudService<Delay, DelayId>{
     @Autowired
     private DelayRepo repo;
 
+    @Autowired
+    private TrainScheduleRepo trainScheduleRepo;
+    @Autowired
+    private RouteStationRepo routeStationRepo;
+
     @Override
     public Page<Delay> findAllPaged(Integer page, Integer size) {
-        return repo.findAll(PageRequest.of(page,size, Sort.by("id")));
+        return repo.findAll(PageRequest.of(page,size, Sort.by("trainSchedule")));
     }
 
     @Override
@@ -29,12 +36,14 @@ public class DelayService implements CrudService<Delay, DelayId>{
 
     @Override
     public Delay create(Delay entity) {
+        entity.setId(new DelayId(entity.getTrainSchedule().getId(),entity.getRouteStation().getId()));
         return repo.save(entity);
     }
 
     @Override
     public Delay update(DelayId id, Delay entity) {
         Delay toUpdate = repo.getById(id);
+        toUpdate.setTime(entity.getTime());
         return repo.save(toUpdate);
     }
 

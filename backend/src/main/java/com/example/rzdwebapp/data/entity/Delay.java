@@ -3,6 +3,7 @@ package com.example.rzdwebapp.data.entity;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "delay")
 @Getter
 @Setter
+@ToString
+
 public class Delay {
     @EmbeddedId
     private DelayId id;
