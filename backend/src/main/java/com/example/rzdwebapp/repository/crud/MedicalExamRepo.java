@@ -1,4 +1,4 @@
-package com.example.rzdwebapp.repository;
+package com.example.rzdwebapp.repository.crud;
 
 import com.example.rzdwebapp.data.entity.MedicalExam;
 import org.springframework.data.jpa.repository.JpaRepository;

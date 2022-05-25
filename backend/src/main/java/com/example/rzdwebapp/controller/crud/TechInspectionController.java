@@ -2,11 +2,8 @@ package com.example.rzdwebapp.controller.crud;
 
 
 import com.example.rzdwebapp.data.dto.PagedResponse;
-import com.example.rzdwebapp.data.entity.Repair;
 import com.example.rzdwebapp.data.entity.TechInspection;
-import com.example.rzdwebapp.repository.RepairRepo;
-import com.example.rzdwebapp.repository.TechInspectionRepo;
-import com.example.rzdwebapp.service.RepairService;
+import com.example.rzdwebapp.repository.crud.TechInspectionRepo;
 import com.example.rzdwebapp.service.TechInspectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

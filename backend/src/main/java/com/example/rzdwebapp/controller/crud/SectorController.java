@@ -2,7 +2,7 @@ package com.example.rzdwebapp.controller.crud;
 
 import com.example.rzdwebapp.data.entity.Sector;
 import com.example.rzdwebapp.data.dto.PagedResponse;
-import com.example.rzdwebapp.repository.SectorRepo;
+import com.example.rzdwebapp.repository.crud.SectorRepo;
 import com.example.rzdwebapp.service.SectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

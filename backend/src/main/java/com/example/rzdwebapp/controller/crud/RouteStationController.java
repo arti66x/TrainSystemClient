@@ -2,11 +2,8 @@ package com.example.rzdwebapp.controller.crud;
 
 import com.example.rzdwebapp.data.dto.PagedResponse;
 import com.example.rzdwebapp.data.entity.RouteStation;
-import com.example.rzdwebapp.data.entity.TrainSchedule;
-import com.example.rzdwebapp.repository.RouteStationRepo;
-import com.example.rzdwebapp.repository.TrainScheduleRepo;
+import com.example.rzdwebapp.repository.crud.RouteStationRepo;
 import com.example.rzdwebapp.service.RouteStationService;
-import com.example.rzdwebapp.service.TrainScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,9 +1,7 @@
 package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.RouteStation;
-import com.example.rzdwebapp.data.entity.TrainSchedule;
-import com.example.rzdwebapp.repository.RouteStationRepo;
-import com.example.rzdwebapp.repository.TrainScheduleRepo;
+import com.example.rzdwebapp.repository.crud.RouteStationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

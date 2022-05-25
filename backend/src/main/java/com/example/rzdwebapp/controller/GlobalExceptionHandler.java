@@ -25,12 +25,12 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<String> handlePSQLException(ConstraintViolationException e) {
+    public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException e) {
         String message = e.getMessage();
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(ValidationException.class)
-    public ResponseEntity<String> handlePSQLException(ValidationException e) {
+    public ResponseEntity<String> handleValidationException(ValidationException e) {
         String message = e.getMessage();
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }

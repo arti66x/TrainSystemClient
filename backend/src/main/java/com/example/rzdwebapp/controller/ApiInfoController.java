@@ -21,6 +21,6 @@ public class ApiInfoController {
     @GetMapping("/query-list")
     public List<String> getQueryList() {
         return List.of(
-                "query-1","query-2");
+                "1","2");
     }
 }

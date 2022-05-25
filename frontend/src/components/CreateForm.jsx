@@ -96,7 +96,7 @@ class CreateForm extends Component {
         }
         if (this.state.id === '_add') {
             HttpService.createEntity(this.state.table_name, newEntity)
-                .then(res => { this.props.history.push('/' + this.state.table_name) })
+                .then(res => { this.props.history.push('/crud/' + this.state.table_name) })
                 .catch(function (error) {
                     console.log(error)
                     alert(error.response.data);
@@ -105,7 +105,7 @@ class CreateForm extends Component {
         } else {
             HttpService.updateEntity(this.state.table_name, this.state.id, newEntity)
                 .then(res => {
-                    this.props.history.push('/' + this.state.table_name);
+                    this.props.history.push('/crud/' + this.state.table_name);
                 })
                 .catch(function (error) {
                     console.log(error)
@@ -115,7 +115,7 @@ class CreateForm extends Component {
     }
 
     cancel() {
-        this.props.history.push('/' + this.state.table_name);
+        this.props.history.push('/crud/' + this.state.table_name);
     }
 
     inputHandler = (event) => {

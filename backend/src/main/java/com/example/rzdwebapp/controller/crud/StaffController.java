@@ -2,8 +2,8 @@ package com.example.rzdwebapp.controller.crud;
 
 import com.example.rzdwebapp.data.dto.PagedResponse;
 import com.example.rzdwebapp.data.entity.Staff;
-import com.example.rzdwebapp.repository.SpecializationRepo;
-import com.example.rzdwebapp.repository.StaffRepo;
+import com.example.rzdwebapp.repository.crud.SpecializationRepo;
+import com.example.rzdwebapp.repository.crud.StaffRepo;
 import com.example.rzdwebapp.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

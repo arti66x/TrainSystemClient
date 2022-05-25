@@ -1,4 +1,4 @@
-package com.example.rzdwebapp.repository;
+package com.example.rzdwebapp.repository.crud;
 
 import com.example.rzdwebapp.data.entity.Route;
 import org.springframework.data.domain.Page;

@@ -1,18 +1,12 @@
 package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.Station;
-import com.example.rzdwebapp.repository.StationRepo;
-import org.hibernate.Session;
+import com.example.rzdwebapp.repository.crud.StationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 
 @Service
 public class StationService implements CrudService<Station,Integer>{

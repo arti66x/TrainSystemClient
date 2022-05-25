@@ -1,7 +1,7 @@
 package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.Route;
-import com.example.rzdwebapp.repository.RouteRepo;
+import com.example.rzdwebapp.repository.crud.RouteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

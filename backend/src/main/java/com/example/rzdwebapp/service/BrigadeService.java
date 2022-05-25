@@ -1,9 +1,7 @@
 package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.Brigade;
-import com.example.rzdwebapp.data.entity.Staff;
-import com.example.rzdwebapp.repository.BrigadeRepo;
-import com.example.rzdwebapp.repository.StaffRepo;
+import com.example.rzdwebapp.repository.crud.BrigadeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

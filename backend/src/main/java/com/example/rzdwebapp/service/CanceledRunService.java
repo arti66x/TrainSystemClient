@@ -1,19 +1,13 @@
 package com.example.rzdwebapp.service;
 
-import com.example.rzdwebapp.data.entity.Brigade;
 import com.example.rzdwebapp.data.entity.CanceledRun;
-import com.example.rzdwebapp.repository.BrigadeRepo;
-import com.example.rzdwebapp.repository.CanceledRunRepo;
-import com.example.rzdwebapp.repository.TrainScheduleRepo;
+import com.example.rzdwebapp.repository.crud.CanceledRunRepo;
+import com.example.rzdwebapp.repository.crud.TrainScheduleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 
 @Service
 public class CanceledRunService implements CrudService<CanceledRun,Integer>{

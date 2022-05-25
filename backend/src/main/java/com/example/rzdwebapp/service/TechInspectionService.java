@@ -1,9 +1,7 @@
 package com.example.rzdwebapp.service;
 
-import com.example.rzdwebapp.data.entity.Repair;
 import com.example.rzdwebapp.data.entity.TechInspection;
-import com.example.rzdwebapp.repository.RepairRepo;
-import com.example.rzdwebapp.repository.TechInspectionRepo;
+import com.example.rzdwebapp.repository.crud.TechInspectionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

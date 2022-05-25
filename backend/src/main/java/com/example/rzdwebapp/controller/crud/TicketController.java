@@ -4,7 +4,7 @@ import com.example.rzdwebapp.data.dto.PagedResponse;
 import com.example.rzdwebapp.data.dto.fkListDto.RouteStationFK;
 import com.example.rzdwebapp.data.entity.Ticket;
 import com.example.rzdwebapp.data.entity.TicketStatus;
-import com.example.rzdwebapp.repository.TicketRepo;
+import com.example.rzdwebapp.repository.crud.TicketRepo;
 import com.example.rzdwebapp.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

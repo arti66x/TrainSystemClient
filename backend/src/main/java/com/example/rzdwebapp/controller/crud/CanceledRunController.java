@@ -1,9 +1,8 @@
 package com.example.rzdwebapp.controller.crud;
 
 import com.example.rzdwebapp.data.dto.PagedResponse;
-import com.example.rzdwebapp.data.entity.Brigade;
 import com.example.rzdwebapp.data.entity.CanceledRun;
-import com.example.rzdwebapp.repository.CanceledRunRepo;
+import com.example.rzdwebapp.repository.crud.CanceledRunRepo;
 import com.example.rzdwebapp.service.CanceledRunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

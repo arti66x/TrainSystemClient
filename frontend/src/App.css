@@ -6,6 +6,7 @@
 }
 .table-overflow-x{
     overflow-x: auto;
+    margin-top: 10px;
 }
 .table-overflow-x table{
     min-width: 50%;

@@ -21,7 +21,7 @@ class StartPage extends Component {
                 <div className="list-group list-group-flush ">
                     {this.state.tables.map(
                         table =>
-                            <a className="list-group-item list-group-item-action" key={table} href={`/${table}`}>{table}</a>
+                            <a className="list-group-item list-group-item-action" key={table} href={`/crud/${table}`}>{table}</a>
                     )}
                 </div>
             </div>

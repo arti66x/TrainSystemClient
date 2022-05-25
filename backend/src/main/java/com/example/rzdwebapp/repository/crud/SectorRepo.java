@@ -1,4 +1,4 @@
-package com.example.rzdwebapp.repository;
+package com.example.rzdwebapp.repository.crud;
 
 import com.example.rzdwebapp.data.dto.fkListDto.StaffFK;
 import com.example.rzdwebapp.data.entity.Sector;

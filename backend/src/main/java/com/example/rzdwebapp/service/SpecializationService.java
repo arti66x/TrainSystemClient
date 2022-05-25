@@ -2,7 +2,7 @@ package com.example.rzdwebapp.service;
 
 
 import com.example.rzdwebapp.data.entity.Specialization;
-import com.example.rzdwebapp.repository.SpecializationRepo;
+import com.example.rzdwebapp.repository.crud.SpecializationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,13 +1,10 @@
 package com.example.rzdwebapp.service;
 
-import com.example.rzdwebapp.data.entity.CanceledRun;
 import com.example.rzdwebapp.data.entity.Delay;
 import com.example.rzdwebapp.data.entity.DelayId;
-import com.example.rzdwebapp.data.entity.TrainSchedule;
-import com.example.rzdwebapp.repository.CanceledRunRepo;
-import com.example.rzdwebapp.repository.DelayRepo;
-import com.example.rzdwebapp.repository.RouteStationRepo;
-import com.example.rzdwebapp.repository.TrainScheduleRepo;
+import com.example.rzdwebapp.repository.crud.DelayRepo;
+import com.example.rzdwebapp.repository.crud.RouteStationRepo;
+import com.example.rzdwebapp.repository.crud.TrainScheduleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

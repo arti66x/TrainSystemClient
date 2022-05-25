@@ -33,14 +33,14 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
                             {this.state.tables.length > 0 &&
                                  this.state.tables.map(
                                      table =>
-                                        <NavDropdown.Item key={table} href={`/${table}`}>{table}</NavDropdown.Item>
+                                        <NavDropdown.Item key={table} href={`/crud/${table}`}>{table}</NavDropdown.Item>
                              )}
                         </NavDropdown>
                         <NavDropdown title="Queries" id="basic-nav-dropdown">
                             {this.state.queries.length > 0 &&
                                  this.state.queries.map(
                                      table =>
-                                        <NavDropdown.Item key={table} href={`/${table}`}>{table}</NavDropdown.Item>
+                                        <NavDropdown.Item key={table} href={`/query/${table}`}>{table}</NavDropdown.Item>
                              )}
                         </NavDropdown>
                     </Nav>

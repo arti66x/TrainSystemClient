@@ -2,11 +2,9 @@ package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.RouteStation;
 import com.example.rzdwebapp.data.entity.Ticket;
-import com.example.rzdwebapp.data.entity.TrainSchedule;
 import com.example.rzdwebapp.exception.ValidationException;
-import com.example.rzdwebapp.repository.RouteStationRepo;
-import com.example.rzdwebapp.repository.TicketRepo;
-import com.example.rzdwebapp.repository.TrainScheduleRepo;
+import com.example.rzdwebapp.repository.crud.RouteStationRepo;
+import com.example.rzdwebapp.repository.crud.TicketRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -34,6 +32,7 @@ public class TicketService implements CrudService<Ticket,Integer>{
 
     @Override
     public Ticket create(Ticket entity) {
+        checkEntity(entity);
         return repo.save(entity);
     }
 
@@ -59,9 +58,9 @@ public class TicketService implements CrudService<Ticket,Integer>{
     private void checkEntity(Ticket e){
         RouteStation start = routeStationRepo.getById(e.getStartStation().getId());
         RouteStation end = routeStationRepo.getById(e.getEndStation().getId());
-        if( start.getRoute().getId() != end.getRoute().getId()){
+//        System.out.println(start.);
+        if(!Objects.equals(start.getRoute().getId(), end.getRoute().getId())){
             throw new ValidationException("different routes of selected stations");
         }
-
     }
 }

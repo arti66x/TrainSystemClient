@@ -1,4 +1,4 @@
-package com.example.rzdwebapp.repository;
+package com.example.rzdwebapp.repository.crud;
 
 import com.example.rzdwebapp.data.dto.fkListDto.IdEntityFK;
 import com.example.rzdwebapp.data.entity.TechInspection;
