@@ -25,12 +25,20 @@ class StartPage extends Component {
 
     updateTable(form) {
         this.setState({
-            form:form
+            form:form,
+            page: 1,
+            inputPage: 1
         })
-        HttpService.getTableByQuery(this.state.queryName, form, this.state.page, this.state.rowsPerPage).then(data => {
+        HttpService.getTableByQuery(this.state.queryName, form, 1, this.state.rowsPerPage).then(data => {
+
             console.log(data)
             this.setState({ entities: data.entities, countPages: data.countPages })
-            this.setState({ headers: Object.keys(data.entities[0]) })
+            if(data.entities.length !== 0)
+                this.setState({ headers: Object.keys(data.entities[0]) })
+            else if(this.state.headers.length === 0)
+            this.setState({ headers: ['empty'] })
+            
+
         })
             .catch(function (error) {
                 console.log(error)

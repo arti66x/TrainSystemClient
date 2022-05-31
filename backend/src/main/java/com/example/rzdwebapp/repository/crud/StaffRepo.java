@@ -1,5 +1,6 @@
 package com.example.rzdwebapp.repository.crud;
 
+import com.example.rzdwebapp.data.dto.fkListDto.IdEntityFK;
 import com.example.rzdwebapp.data.dto.fkListDto.NamedEntityFK;
 import com.example.rzdwebapp.data.entity.Staff;
 import org.springframework.data.domain.Example;
@@ -16,7 +17,10 @@ import java.util.List;
 public interface StaffRepo extends JpaRepository<Staff,Integer> {
     @Query(value = "SELECT new com.example.rzdwebapp.data.dto.fkListDto.NamedEntityFK(e.id, e.name) FROM Sector e")
     List<NamedEntityFK> getSectorList();
-
+    @Query(value = "SELECT new com.example.rzdwebapp.data.dto.fkListDto.IdEntityFK(e.id) FROM Brigade e")
+    List<IdEntityFK> getBrigadeList();
+    @Query(value = "SELECT new com.example.rzdwebapp.data.dto.fkListDto.IdEntityFK(e.id) FROM Train e")
+    List<IdEntityFK> getTrainList();
     @Override
     @EntityGraph(attributePaths = {"specialization","sector"})
     Page<Staff> findAll(Pageable pageable);

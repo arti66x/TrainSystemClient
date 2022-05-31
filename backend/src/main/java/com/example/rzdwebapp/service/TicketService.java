@@ -2,7 +2,7 @@ package com.example.rzdwebapp.service;
 
 import com.example.rzdwebapp.data.entity.RouteStation;
 import com.example.rzdwebapp.data.entity.Ticket;
-import com.example.rzdwebapp.exception.ValidationException;
+import com.example.rzdwebapp.exception.BadRequestException;
 import com.example.rzdwebapp.repository.crud.RouteStationRepo;
 import com.example.rzdwebapp.repository.crud.TicketRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +60,7 @@ public class TicketService implements CrudService<Ticket,Integer>{
         RouteStation end = routeStationRepo.getById(e.getEndStation().getId());
 //        System.out.println(start.);
         if(!Objects.equals(start.getRoute().getId(), end.getRoute().getId())){
-            throw new ValidationException("different routes of selected stations");
+            throw new BadRequestException("different routes of selected stations");
         }
     }
 }

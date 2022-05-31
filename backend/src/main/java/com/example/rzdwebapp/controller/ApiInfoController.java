@@ -16,11 +16,11 @@ public class ApiInfoController {
         return List.of(
                 "specialization","staff","station","route","sector",
                 "brigade","train","repair","techinspection","trainschedule",
-                "routestation","ticket","canceledrun","delay");
+                "routestation","ticket","canceledrun","delay","medicalexam");
     }
     @GetMapping("/query-list")
     public List<String> getQueryList() {
         return List.of(
-                "1","2");
+                "1","2","3","4","4_range","5","6","7","8");
     }
 }

@@ -19,8 +19,7 @@ public class QueryLoader {
         try {
             Resource resource = new ClassPathResource("sql/" + name);
             String q = StreamUtils.copyToString(resource.getInputStream(), Charset.defaultCharset());
-
-            System.err.println(q);
+//            System.err.println(q);
             return q;
         } catch (IOException e) {
             e.printStackTrace();
