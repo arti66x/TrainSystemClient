@@ -25,7 +25,7 @@ public class Q4_2Repository extends QueryRepo{
     protected void setParams(Query q, QueryFormDto f){
         Q4_2FormDto form = (Q4_2FormDto) f;
         q.setParameter("station_id", new TypedParameterValue(StandardBasicTypes.INTEGER, form.getStation()));
-        q.setParameter("min_time", new TypedParameterValue(StandardBasicTypes.TIMESTAMP, form.getMinTimeArrive()));
+        q.setParameter("min_time", new TypedParameterValue(StandardBasicTypes.DATE, form.getMinTimeArrive()));
         q.setParameter("max_time", new TypedParameterValue(StandardBasicTypes.DATE, form.getMaxTimeArrive()));
 
     }

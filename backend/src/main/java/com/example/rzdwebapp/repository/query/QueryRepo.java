@@ -1,11 +1,9 @@
 package com.example.rzdwebapp.repository.query;
 
-import com.example.rzdwebapp.data.dto.QueryFormDto.Q5FormDto;
 import com.example.rzdwebapp.data.dto.QueryFormDto.QueryFormDto;
 import com.example.rzdwebapp.data.dto.QueryPagedResponse;
 import lombok.AllArgsConstructor;
 import org.hibernate.query.internal.NativeQueryImpl;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -37,7 +35,8 @@ public abstract class QueryRepo {
         Query countQuery = em.createNativeQuery(countQueryStr);
         setParams(countQuery,form);
         Integer count = ((Number) countQuery.getSingleResult()).intValue();
-        return new QueryPagedResponse(result,(count/ form.getSize()+1));
+
+        return new QueryPagedResponse(result,((count-1)/ form.getSize()+1));
     }
 
     abstract String getQuery(QueryFormDto form);

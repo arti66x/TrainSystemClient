@@ -1,7 +1,9 @@
-
+-- Получить перечень и общее число локомотивов,
+-- приписанных к железнодорожной станции, находящихся на ней в указанное вpемя,
+-- по вpемени прибытия на станции, по количеству совеpшенных маршрутов.
 select train_id, route,
-       to_char(time_arrive, 'YYYY-MM-DD HH:MI') as time_arrive,
-       to_char(time_leave, 'YYYY-MM-DD HH:MI') as time_leave from
+       to_char(time_arrive, 'YYYY-MM-DD HH24:MI') as time_arrive,
+       to_char(time_leave, 'YYYY-MM-DD HH24:MI') as time_leave from
 (select ts.train_id, r.name as route,
            case when ts.direction
                then ts.time + interval '1 minute' * ts.route_time
@@ -19,7 +21,7 @@ select train_id, route,
                end time_leave
     from
 
-    (select ts.train_id,ts.time,ts.route_id, ts.direction,rs.route_time, rs.time_stop from
+    (select ts.id as ts_id, ts.train_id,ts.time,ts.route_id, ts.direction,rs.route_time, rs.time_stop from
         -- последняя поездка каждого поезда перед указанной датой
         train_schedule ts
         inner join
@@ -46,3 +48,5 @@ select train_id, route,
                                   ( rs.route_time!=0)
     inner join route r on ts.route_id = r.id
     ) as ss
+where (:time > time_arrive) and
+    (time_leave is null or :time < time_leave)
